@@ -1,0 +1,9 @@
+<div style="border:1px solid black;min-height:100px; padding:20px;">
+  <p>component one</p>
+
+  <input type="text" #comp1 />
+  <br />
+  {{ componentOneData }}
+  <br />
+  <button (click)="submit(comp1.value)">submit</button>
+</div>
