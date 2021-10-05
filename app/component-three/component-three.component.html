@@ -1,9 +1,14 @@
 <div style="border:1px solid black;min-height:100px; padding:20px;">
-<p>component THree</p>
+  <p>component THree</p>
 
-<input type="text" #comp1 />
-<br>
-{{ componentThreeData }}
-<br>
-<button (click)="submit(comp1.value)">submit</button>
+  <input type="text" #comp1 />
+  <br />
+
+  <ol>
+    <li *ngFor="let data of componentThreeData">
+      {{ data.name }}
+    </li>
+  </ol>
+  <br />
+  <button (click)="submit(comp1.value)">submit</button>
 </div>

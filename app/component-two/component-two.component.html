@@ -1,9 +1,11 @@
 <div style="border:1px solid black;min-height:100px; padding:20px;">
   <p>component Two</p>
 
-  <input type="text" #comp1 />
-  <br />
-  {{ componentTwoData }}
-  <br />
-  <button (click)="submit(comp1.value)">submit</button>
+  <!-- <input type="text" #comp1 /> -->
+  <ol>
+  <li *ngFor="let data of componentTwoData">
+    {{ data.name }}
+  </li>
+</ol>
+  <!-- <button (click)="submit(comp1.value)">submit</button> -->
 </div>

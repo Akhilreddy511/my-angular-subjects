@@ -7,7 +7,7 @@ import { DataShareService } from '../data-share.service';
   styleUrls: ['./component-one.component.css'],
 })
 export class ComponentOneComponent implements OnInit {
-  componentOneData: any = '';
+  componentOneData: any = [];
 
   constructor(private dataShareService: DataShareService) {}
 
@@ -19,6 +19,14 @@ export class ComponentOneComponent implements OnInit {
 
   submit(input) {
     console.log(input);
-    this.dataShareService.shareData.next(input);
+    let object = { name: input };
+    console.log('creating an object with name', object);
+    console.log('componentOneData ===>', this.componentOneData);
+
+    this.componentOneData.push(object);
+
+    console.log('componentOneData ===>', this.componentOneData);
+
+    this.dataShareService.shareData.next(this.componentOneData);
   }
 }

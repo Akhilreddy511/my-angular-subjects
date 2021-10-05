@@ -7,7 +7,7 @@ import { DataShareService } from '../data-share.service';
   styleUrls: ['./component-two.component.css'],
 })
 export class ComponentTwoComponent implements OnInit {
-  componentTwoData: any = '';
+  componentTwoData: any = [];
   constructor(private dataShareService: DataShareService) {}
 
   ngOnInit() {
@@ -18,6 +18,7 @@ export class ComponentTwoComponent implements OnInit {
 
   submit(input) {
     console.log(input);
+
     this.dataShareService.shareData.next(input);
   }
 }

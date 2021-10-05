@@ -4,10 +4,10 @@ import { DataShareService } from '../data-share.service';
 @Component({
   selector: 'app-component-three',
   templateUrl: './component-three.component.html',
-  styleUrls: ['./component-three.component.css']
+  styleUrls: ['./component-three.component.css'],
 })
 export class ComponentThreeComponent implements OnInit {
-  componentThreeData:any =""
+  componentThreeData: any = [];
   constructor(private dataShareService: DataShareService) {}
 
   ngOnInit() {
@@ -16,11 +16,16 @@ export class ComponentThreeComponent implements OnInit {
     });
   }
 
-
-  
   submit(input) {
     console.log(input);
-    this.dataShareService.shareData.next(input);
-  }
+    let object = { name: input };
+    console.log('creating an object with name', object);
+    console.log('componentThreeData ===>', this.componentThreeData);
 
+    this.componentThreeData.push(object);
+
+    console.log('componentThreeData ===>', this.componentThreeData);
+
+    this.dataShareService.shareData.next(this.componentThreeData);
+  }
 }

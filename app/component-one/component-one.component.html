@@ -3,7 +3,12 @@
 
   <input type="text" #comp1 />
   <br />
-  {{ componentOneData }}
+  <ol>
+  <li *ngFor="let data of componentOneData">
+    {{ data.name }}
+  </li>
+</ol>
+<br />
   <br />
   <button (click)="submit(comp1.value)">submit</button>
 </div>
